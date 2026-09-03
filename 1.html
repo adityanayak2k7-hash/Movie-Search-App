@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Guide - Dynamic Netflix Theme</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="3.css">
+</head>
+<body>
+<!-- Ace Racer Intro Trailer (Netflix Style) -->
+<div id="intro-trailer" class="intro-trailer">
+  <video id="aceVideo" autoplay  >
+    <source src="Ace Racer - Official Trailer.mp4" type="video/mp4">
+    Your browser doesn't support video.
+  </video>
+
+  <div class="trailer-overlay">
+    <div class="trailer-logo">
+      <h1>ACE RACER</h1>
+      <p>Official Trailer</p>
+    </div>
+  </div>
+  <div></div>
+</div>
+    <!-- Particles Canvas -->
+    <canvas id="particles-canvas" aria-hidden="true"></canvas>
+    
+    <!-- Hero Banner -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Movie Guide</h1>
+            <p class="hero-subtitle">Discover your next favorite film with AI-powered search</p>
+        </div>
+    </section>
+    
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <h1>Movie Guide</h1>
+        </div>
+        <div class="search-container">
+            <form action="" class="search-form">
+                <div class="search-input-wrapper">
+                    <input type="text" placeholder="Search movies, actors..." class="inputBox" id="searchInput"/>
+                    <span class="search-icon">🔍</span>
+                </div>
+                <button type="submit" class="search-btn">Search</button>
+                <button type="button" id="micBtn" class="micBtn" title="Voice Search">🎤</button>
+            </form>
+        </div>
+        <!-- Dynamic Theme Toggle -->
+        <div class="theme-toggle">
+            <button class="theme-btn active" data-theme="netflix" title="Netflix Mode">🍿</button>
+            <button class="theme-btn" data-theme="light" title="Light Mode">☀️</button>
+            <button class="theme-btn" data-theme="party" title="Party Mode">🎉</button>
+            <button class="theme-btn" data-theme="glass" title="Glass Mode">🥂</button>
+        </div>
+    </nav>
+
+    <!-- Loading Spinner -->
+    <div class="loading-spinner" id="loadingSpinner">
+        <div class="spinner"></div>
+        <p>Finding your movies...</p>
+    </div>
+    
+    <!-- Error Display Area -->
+    <div class="error-display" id="errorDisplay" style="display:none; text-align:center; padding:2rem; color:var(--accent-primary);">
+        <h3 id="errorTitle"></h3>
+        <p id="errorMessage"></p>
+    </div>
+    
+    <!-- Main Content -->
+    <main>
+        <section>
+<div class="movie-container" id="mainContent">
+
+                <div class="placeholder-section" id="placeholder">
+                    <h2 class="xham">Search for your favorite movies</h2>
+                </div>
+                <div class="genres-section" id="genresSection">
+                    <h3>Explore by Genre</h3>
+                    <div class="genres-grid">
+                        <button class="genre-btn" data-genre="Action">Action</button>
+                        <button class="genre-btn" data-genre="Comedy">Comedy</button>
+                        <button class="genre-btn" data-genre="Drama">Drama</button>
+                        <button class="genre-btn" data-genre="Horror">Horror</button>
+                        <button class="genre-btn" data-genre="Sci-Fi">Sci-Fi</button>
+                        <button class="genre-btn" data-genre="Romance">Romance</button>
+                        <button class="genre-btn" data-genre="Thriller">Thriller</button>
+                        <button class="genre-btn" data-genre="Animation">Animation</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 Movie Guide - Dynamic AI Themes</p>
+    </footer>
+    <script>
+
+    </script>
+</body>
+<script src="2.js"></script>
+</html>
