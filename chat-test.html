@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat UI Test</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="3.css">
+    <style>
+        body { 
+            data-theme: netflix; 
+            min-height: 100vh; 
+            padding: 2rem; 
+            background: linear-gradient(135deg, #000 0%, #111 100%);
+        }
+        .test-container { max-width: 800px; margin: 0 auto; }
+    </style>
+</head>
+<body data-theme="netflix">
+    <div class="test-container">
+        <h1 style="color: white; text-align: center; margin-bottom: 2rem;">🧪 Chat UI Test (Netflix Theme)</h1>
+        
+        <!-- Sample Movie Card with Chat -->
+        <div class="movie-card">
+            <div class="movie-poster">
+                <img src="https://via.placeholder.com/350x525/333/fff?text=Oppenheimer" alt="Oppenheimer" class="poster-img">
+                <button class="trailer-btn">▶️ Trailer</button>
+            </div>
+            <div style="flex: 1;">
+                <h2>Oppenheimer (2023)</h2>
+                <p>⭐ 8.4 | Released: 2023 | Runtime: 180 min</p>
+                <p><strong>Cast:</strong> Cillian Murphy, Emily Blunt, Matt Damon</p>
+                <p><strong>Plot:</strong> The story of physicist J. Robert Oppenheimer...</p>
+                
+                <!-- NEW CHAT UI -->
+                <div class="movie-chat-container">
+                    <div class="chat-header">
+                        <label style="color: var(--text-secondary); font-size: 0.85rem;">Chat as:</label>
+                        <select class="chat-character-select">
+                            <option>Loading characters...</option>
+                            <option>Cillian Murphy (Oppenheimer)</option>
+                            <option>Emily Blunt (Kitty)</option>
+                            <option>Matt Damon (Lewis Strauss)</option>
+                            <option>Robert Downey Jr. (General Groves)</option>
+                            <option>Florence Pugh (Jean Tatlock)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="chat-messages" style="background: rgba(0,0,0,0.2); padding: 1rem; border-radius: 16px; margin-bottom: 1rem;">
+                        <div class="chat-message message-user">
+                            <div class="chat-bubble chat-bubble-user">Hey Oppenheimer, was building the bomb worth it?</div>
+                            <span class="chat-message-time" style="font-size: 0.7rem; opacity: 0.6;">10:32 AM</span>
+                        </div>
+                        
+                        <div class="typing-indicator">
+                            <div class="typing-dots">
+                                <span></span><span></span><span></span>
+                            </div>
+                            <span style="color: var(--text-secondary);">Character is typing...</span>
+                        </div>
+                    </div>
+                    
+                    <div class="chat-input-container">
+                        <textarea class="chat-main-input" placeholder="Type your message... (or use mic)"></textarea>
+                        <button class="chat-mic-btn" title="Voice Input">🎤</button>
+                        <button class="chat-send-btn">➤</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Load 2.js -->
+    <script src="2.js"></script>
+    
+    <!-- Static Chat Init -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            window.staticMovieData = {
+                Title: 'Oppenheimer (2023)',
+                imdbID: 'tt15398776',
+                Actors: 'Cillian Murphy (Oppenheimer), Emily Blunt (Kitty), Matt Damon (Lewis Strauss), Robert Downey Jr. (General Groves), Florence Pugh (Jean Tatlock)'
+            };
+            
+            const card = document.querySelector('.test-container .movie-card');
+            if (card && typeof initStaticChat === 'function') {
+                console.log('🧪 Static chat init...');
+                initStaticChat(card, window.staticMovieData);
+            } else {
+                console.log('⚠️ Waiting for initStaticChat... (refresh after 2.js updates)');
+            }
+        });
+    </script>
+</body>
+</html>
